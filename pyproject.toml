@@ -1,0 +1,21 @@
+[project]
+name = "codeassist"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "docker (>=7.1.0,<8.0.0)",
+    "eth-abi>=5.2.0",
+    "eth-hash[pycryptodome]>=0.7.1",
+    "eth-keys>=0.7.0",
+    "huggingface-hub>=0.35.3",
+    "ollama>=0.6.0",
+    "python-dotenv>=1.1.1",
+    "rich>=14.1.0",
+    "tensorboard>=2.20.0",
+    "torch>=2.9.0",
+]

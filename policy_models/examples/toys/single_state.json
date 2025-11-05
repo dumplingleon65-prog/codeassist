@@ -1,0 +1,8 @@
+{
+"t": 0,
+"line_tuples": [
+    ["def two_sum(a,b):", {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"on": false, "line": 0, "char": 0, "last_t": -1}],
+    ["    s = a + b",     {"t_last":0,"span":[4,10],"flags":[1,0,0]}, {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"on": false, "line": 1, "char": 0, "last_t": -1}],
+    ["    return s",      {"t_last":0,"span":[4,14],"flags":[1,0,0]}, {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"on": true,  "line": 2, "char": 12, "last_t": 0}]
+]
+}

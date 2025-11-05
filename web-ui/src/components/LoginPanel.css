@@ -1,0 +1,18 @@
+/* Alchemy Account Kit Modal Customizations for CodeAssist Login */
+
+/* Hide the close button in the auth modal (the back/close button in top right) */
+.akui-btn.akui-btn-link:not(.invisible) {
+  display: none !important;
+}
+
+/* Fix button text colors - dark text on green background for better contrast */
+.akui-btn-primary,
+.akui-btn-auth {
+  color: #1a1414 !important;
+}
+
+/* Ensure button text inside divs is also dark */
+.akui-btn-primary > div,
+.akui-btn-auth > div {
+  color: #1a1414 !important;
+}

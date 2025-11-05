@@ -1,0 +1,143 @@
+name: "Triage / External Support Issue"
+description: "Use this template for issues reported via Discord, moderators, or external users."
+title: "[Triage] <Short Summary of Issue>"
+labels: ["needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Triage / External Support Issue
+        Please fill out as much information as possible.  
+        Required fields are marked **(required)**.
+
+  - type: input
+    id: links
+    attributes:
+      label: "Links to Reports (required)"
+      description: "Include any Discord threads, screenshots, or related GitHub issues."
+      placeholder: "Example: https://discord.com/channels/... or https://github.com/... "
+    validations:
+      required: true
+
+  - type: input
+    id: datetime
+    attributes:
+      label: "Date & Time Observed (UTC) (required)"
+      description: "Approximate date and time the issue occurred."
+      placeholder: "YYYY-MM-DD HH:MM UTC"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: "Is the Issue Reproducible? (required)"
+      description: "Select whether the issue can be reliably reproduced."
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce_description
+    attributes:
+      label: "Reproduction Attempts (required)"
+      description: "If known, describe the steps taken to reproduce or confirm the issue."
+      placeholder: "List reproduction attempts or notes here."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severity Level (required)"
+      description: "Select the severity of the issue."
+      options:
+        - "Critical — network-wide or blocking functionality"
+        - "Moderate — user-specific or intermittent"
+        - "Minor — UI, UX, or documentation issue"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: "Operating Environment (required)"
+      description: "Platform, OS, and hardware context."
+      placeholder: "Example: Ubuntu 22.04 (GPU), macOS, Ubuntu 22.04+, WSL 2"
+    validations:
+      required: true
+
+  - type: input
+    id: install_method
+    attributes:
+      label: "Installation Method"
+      description: "How was BlockAssist installed?"
+      placeholder: "Git clone, pip install, Docker, or Other"
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: "Version Info (required)"
+      description: "App, model, or node version (e.g., v0.1.2, commit hash, or build number)."
+      placeholder: "Example: v0.1.2 or commit abc1234"
+    validations:
+      required: true
+
+  - type: input
+    id: execution
+    attributes:
+      label: "Execution Context"
+      description: "Was this running locally, in a swarm, or via cloud?"
+      placeholder: "Example: Local / Swarm / Cloud"
+    validations:
+      required: false
+
+  - type: textarea
+    id: troubleshooting
+    attributes:
+      label: "Troubleshooting Steps Taken (required)"
+      description: "Describe what steps have already been tried and by whom."
+      placeholder: "Example: Restarted client, reinstalled dependencies, re-ran setup.sh."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Observed Errors / Logs (required)"
+      description: "Paste any error messages, tracebacks, or links to logs or screenshots."
+      placeholder: "Example: Traceback output, error message, or crash report."
+    validations:
+      required: true
+
+  - type: textarea
+    id: docs
+    attributes:
+      label: "Docs / Resources Referenced (required)"
+      description: "Which documentation pages, GitHub issues, or other resources were checked?"
+      placeholder: "Example: https://docs.gensyn.ai/blockassist/troubleshooting"
+    validations:
+      required: true
+
+  - type: textarea
+    id: progress
+    attributes:
+      label: "Progress / Outcome"
+      description: "Summarize what has changed or what was attempted so far."
+      placeholder: "Example: User reinstalled; issue persists. Logs attached."
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Anything else relevant to understanding or reproducing the issue (threads, similar reports, screenshots)."
+      placeholder: "Add notes or related links here."
+    validations:
+      required: false

@@ -1,0 +1,3 @@
+# TODO: Re-enable linting for simulation code after we refactor camelCase keys
+src/simulation/**
+

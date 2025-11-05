@@ -1,0 +1,11 @@
+{
+    "episode_id": 42,
+    "code": "print(\"hello world\")\n",
+    "test_cases": [
+        {"test_id": "foo", "input": "none", "output": "hello world\n"}
+    ],
+    "timestep": 7,
+    "timeout_ms": 60000,
+    "memory_limit": 0,
+    "store_activity": true
+}

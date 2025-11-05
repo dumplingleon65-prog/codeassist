@@ -1,0 +1,8 @@
+/* Monaco Editor Styles */
+.monaco-editor-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "JetBrains Mono";
+  padding-top: 16px; /* visual breathing room under badges */
+}

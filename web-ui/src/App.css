@@ -1,0 +1,148 @@
+:root {
+  --dark-bg-base: #230800;
+  --dark-bg-1: #1D1D1D;
+  --dark-bg-2: #141414;
+  --border-base: #343434;
+  --green-base: #B3FFC1;
+  --pink-base: #FAD7D1;
+}
+
+/* Global App Styles */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Simplon";
+  background-color: var(--dark-bg-base);
+  color: #d4d4d4;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  min-height: 70px;
+  flex-shrink: 0;
+  background-color: var(--dark-bg-base);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-family: "Simplon";
+  font-size: 24px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+/* Brand logo image */
+.header-left .brand {
+  height: 43px;
+  display: block;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: #cccccc;
+}
+
+/* Main Layout */
+.app-main {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e1e;
+}
+
+.loading-container h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #d4d4d4;
+}
+
+/* Editor Section */
+.editor-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--dark-bg-1)
+}
+
+.editor-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid;
+  flex-shrink: 0;
+  background-color: #2d2d30;
+  border-bottom-color: #3e3e42;
+}
+
+.editor-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.editor-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.editor-footer {
+  padding: 0.5rem 1.5rem;
+  border-top: 1px solid;
+  flex-shrink: 0;
+  border-top-color: #3e3e42;
+}
+
+.status-info {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  color: #cccccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-left h1 {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.highlight {
+    background: #a9ffb9aa;
+    animation: fade 250ms 1 cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

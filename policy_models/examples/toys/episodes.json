@@ -1,0 +1,14 @@
+[
+  {
+    "states": [
+      [
+        ["def f(x):", {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"on": true, "line":1,"char":8,"last_t":-1}],
+        ["    pass",   {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"on": false,"line":1,"char":8,"last_t":-1}]
+      ],
+      [
+        ["def f(x):", {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"on": false, "line":1,"char":8,"last_t":0}],
+        ["    return x", {"t_last":0,"span":[4,14],"flags":[1,0,0]}, {"t_last":-1,"span":[0,0],"flags":[0,0,0]}, {"on": false,"line":1,"char":8,"last_t":0}]
+      ]
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+name: Ruff Lint Check
+on: [push]
+jobs:
+  Run-Lint-Check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v3
+      - name: "run ruff on state-service"
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "format --check"
+          src: "./state-service"
+      - name: "run ruff on solution-tester"
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "format --check"
+          src: "./solution-tester"
+      - name: "run ruff on policy_models"
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "format --check"
+          src: "./policy_models"

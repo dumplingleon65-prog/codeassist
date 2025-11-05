@@ -1,0 +1,19 @@
+# https://editorconfig.org/
+root=true
+
+# Unix-style newlines, spaces for indentation
+[*]
+indent_style=space
+charset=utf-8
+
+[*.{cpp,c,h,mlir,td}]
+indent_size=2
+trim_trailing_whitespace=true
+
+[*.{py,bazel,bzl}]
+indent_size=4
+
+[*.{rs,sh}]
+indent_size=4
+
+

@@ -1,0 +1,159 @@
+name: Build Containers
+
+on:
+  push:
+
+jobs:
+  build-web-ui:
+    runs-on:
+      labels:
+        - ubuntu-ci-4core
+    environment:
+      name: Docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: gensynai/codeassist-web-ui:${{ github.ref_name }}
+          context: ./web-ui
+          build-args: |
+            NEXT_PUBLIC_TESTER_URL=http://localhost:8008
+            NEXT_PUBLIC_STATE_SERVICE_URL=http://localhost:8000
+            NEXT_PUBLIC_ALCHEMY_API_KEY=wvs3CE89g2JwoshNNCMe1
+
+  build-zero-style-ui:
+    runs-on:
+      labels:
+        - ubuntu-ci-4core
+    environment:
+      name: Docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: gensynai/codeassist-zero-style-ui:${{ github.ref_name }}
+          context: ./web-ui
+          build-args: |
+            NEXT_PUBLIC_TESTER_URL=http://localhost:8008
+            NEXT_PUBLIC_STATE_SERVICE_URL=http://localhost:8000
+            NEXT_PUBLIC_POLICY_MODELS_URL=http://localhost:8001
+            NEXT_PUBLIC_ZERO_STYLE_MODE=true
+            NEXT_PUBLIC_ALCHEMY_API_KEY=wvs3CE89g2JwoshNNCMe1
+
+  build-state-service:
+    runs-on: ubuntu-latest
+    environment:
+      name: Docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: gensynai/codeassist-state-service:${{ github.ref_name }}
+          context: ./state-service
+
+  build-solution-tester:
+    runs-on: ubuntu-latest
+    environment:
+      name: Docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: gensynai/codeassist-solution-tester:${{ github.ref_name }}
+          context: ./solution-tester
+
+  build-policy-model:
+    runs-on: ubuntu-latest
+    environment:
+      name: Docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: gensynai/codeassist-policy-model:${{ github.ref_name }}
+          context: ./policy_models

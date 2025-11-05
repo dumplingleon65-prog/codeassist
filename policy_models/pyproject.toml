@@ -1,0 +1,14 @@
+[project]
+name = "policy-models"
+version = "0.1.0"
+description = "CodeAssist policy models service"
+readme = "README.md"
+requires-python = ">=3.12, <4.0"
+dependencies = [
+    "fastapi>=0.117.1",
+    "numpy>=2.2.6",
+    "ollama>=0.6.0",
+    "tensorboard>=2.0.0",
+    "torch>=2.0.0",
+    "uvicorn>=0.37.0",
+]
